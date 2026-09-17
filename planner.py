@@ -20,7 +20,7 @@ the extension described in the README.
 
 from typing import Dict, List
 
-from models import EPSILION, Delivery, Trip
+from models import EPSILON, Delivery, Trip
 
 
 def plan_trips(

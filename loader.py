@@ -4,7 +4,7 @@ import json
 import os
 from typing import Any, Dict, List, Tuple
 
-from models import EPSILION, Delivery, Rejected
+from models import EPSILON, Delivery, Rejected
 
 REQUIRED_FIELDS = ("id", "area", "priority", "weight")
 
@@ -77,7 +77,7 @@ def _parse_row(raw, seq, capacity, seen_ids, area_names):
         return None, f"weight '{raw.get('weight')}' is not a number"
     if weight <= 0:
         return None, f"weight {weight:g} kg must be greater than zero"
-    if weight > capacity + EPSILION:
+    if weight > capacity + EPSILON:
         return None, f"weight {weight:g} kg exceeds vehicle capacity {capacity:g} kg"
 
     area, area_key = _normalise_area(raw.get("area"))
